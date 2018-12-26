@@ -4,6 +4,7 @@
   "description": "Redis client mock object for unit testing",
   "author": "Kristian Faeldt <kristian.faeldt@gmail.com>",
   "main": "./lib/redis-mock",
+  "browser": "./lib/redis-mock-browser",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,13 +12,15 @@
   },
   "devDependencies": {
     "eslint": "^2.10.2",
-    "should": "8.3.2",
     "mocha": "2.2.1",
-    "redis": "^2.6.2"
+    "redis": "^2.6.2",
+    "should": "8.3.2",
+    "webpack": "^4.28.2"
   },
   "scripts": {
     "test": "make test",
-    "lint": "eslint ./lib ./test"
+    "lint": "eslint ./lib ./test",
+    "build:browser": "webpack"
   },
   "keywords": [
     "redis",
@@ -48,5 +51,9 @@
     "url": "https://github.com/yeahoffline/redis-mock/issues",
     "email": "frank.gasser@gmail.com"
   },
-  "engine": "node >= 0.10.0"
+  "engine": "node >= 0.10.0",
+  "dependencies": {
+    "inherits": "^2.0.3",
+    "wolfy87-eventemitter": "^5.2.5"
+  }
 }
